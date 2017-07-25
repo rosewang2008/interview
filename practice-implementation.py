@@ -3,5 +3,4 @@ class linkedList:
 		self.node = node
 		self.right = right_node
 		self.left = left_node
-	def appendToTail(self, end_index):
-		self
+	## def appendToTail(self, end_index):
