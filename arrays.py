@@ -87,6 +87,7 @@ class HashTable:
 
 	def get(self, word): 
 		position = self.hashposition(word)
+		# to be edited:
 		for element in self.data:
 			if word in self.data[position]:
 				return `word` + ' is in hash table at position ' + str(position) + '.'
