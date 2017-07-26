@@ -67,6 +67,7 @@ class HashTable:
 			sum_ordinal += ord(word[position])*position
 		return sum_ordinal % self.size
 
+	# only if we want unique entries:
 	def rehash(self, old_hash_value):
 		''' Function is called if the previous location is 
 		already filled.
@@ -82,29 +83,25 @@ class HashTable:
 		else:
 			self.slots[hashvalue].append(self.ordinal_calc(data))
 			self.data[hashvalue].append(data)
+			return `data` + ' has been put into a linked list in hash table.' 
 
-	def get(self, key): 
-		start = self.hash(key, len(self.size))
-		if self.slots[start] == key:
-			return self.data[start] == key
+	def get(self, word): 
+		position = self.hashposition(word)
+		for element in self.data:
+			if word in self.data[position]:
+				return `word` + ' is in hash table at position ' + str(position) + '.'
 		else: # slots[start] != key
-			new_start = self.rehash(key, len(self.size))
-			# recursive: if slots[new_start] == key, then return result
-
-	# why would we need to create the functions below
-	def __getitem__(self,key):
-		return self.get(key)
-
-	def __setitem__(self, key, data):
-		return self.put(key, data)
+			return `word` + ' is not in hash table.'
 
 # Instance of HashTable
 
 H = HashTable(3)
 print(H.put('cat'))
 print(H.put('dog'))
+print
 print(H.data)
 print(H.slots)
+print('cat' in ['cat', 'dog'])
 
 
 # ArrayList and Resizable Arrays
