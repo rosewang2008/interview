@@ -43,7 +43,6 @@ def rehash(position, tablesize):
 	# some skip number: 3, size of skip: all slots must be revisited
 	return (position + 3) % tablesize
 
-
 class HashTable:
 	def __init__(self, size):
 		self.size = size

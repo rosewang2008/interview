@@ -1,3 +1,4 @@
+# from. http://interactivepython.org/runestone/static/pythonds/SortSearch/Hashing.html#fig-hashtable2
 class HashTable:
     def __init__(self):
         self.size = 11
