@@ -87,23 +87,22 @@ class HashTable:
 
 	def get(self, word): 
 		position = self.hashposition(word)
-		# to be edited:
-		# Error: non iterable -- NoneType
-		for element in self.data:
-			if word in self.data[position]:
-				return `word` + ' is in hash table at position ' + str(position) + '.'
-		else: # slots[start] != key
+		# Error: non iterable -- NoneType with: if word in self.data[position]
+		# update: if self.data[position] == None, cannot check if word in element
+		if self.data[position] == None or word not in self.data[position]:
 			return `word` + ' is not in hash table.'
+		else:
+			return `word` + ' is in hash table at position ' + str(position) + '.'
+
 
 # Instance of HashTable
 
 H = HashTable(3)
 print(H.put('cat'))
-print(H.put('dog'))
 print
 print(H.data)
 print(H.slots)
-print('cat' in ['cat', 'dog'])
+print(H.get('dog'))
 
 
 # ArrayList and Resizable Arrays
