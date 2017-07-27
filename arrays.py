@@ -64,7 +64,7 @@ class HashTable:
 		'''
 		sum_ordinal = 0
 		for position in range(len(word)):
-			sum_ordinal += ord(word[position])*position
+			sum_ordinal += ord(word[position]) 
 		return sum_ordinal % self.size
 
 	# only if we want unique entries:
@@ -122,3 +122,8 @@ def unique_string(word):
 print(unique_string('hhi'))
 
 
+
+# attempt with hash table
+# bit array
+# O (n logn) time
+## --> see Java code
