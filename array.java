@@ -40,7 +40,15 @@ public static boolean isUnique(String word) {
 	}
 	int wordChecker = 0;
 	for (int i = 0; i < str.length(); i++) {
-
+		int val = str.charAt(i) - 'a';
+		// 1 << val creates an int value with bit value 0 except for val'th bit
+		// bitwise AND : if bit at position val in checker already set, evaluates as nonzero
+		// return false
+		if ((checker & (1 << val)) > 0) return false;
+		// bitwise OR 
+		// equ to checker = checker | (1 << val);
+		// setting val'th bit to 1
+		checker |= (1 << val);
 	}
 }
 
