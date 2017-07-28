@@ -27,3 +27,5 @@ def URLify(phrase, length):
 	return modified_phrase
 		 
 print(URLify('Mr John Smith        ', 13))
+
+## note: in Java would implement an ArrayList
