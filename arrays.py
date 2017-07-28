@@ -109,19 +109,6 @@ print(H.get('dog'))
 # resizing factor
 # CREATED NEW FILE IN JAVA FOR ARRAYS
 
-# without hash table
-def unique_string(word):
-	unique_list = []
-	for letter in word:
-		if letter not in unique_list:
-			unique_list.append(letter)
-		else:
-			return False
-
-print(unique_string('hhi'))
-
-
-
 # attempt with hash table
 # bit array
 # O (n logn) time
