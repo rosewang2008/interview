@@ -4,7 +4,7 @@ class HashTable:
 		self.data = [None] * size
 		self.hash = [None] * size
 
-	def hash(self, word):
+	def hashID(self, word):
 		sum_ordinal = 0
 		for letter in word:
 			sum_ordinal += ord(letter)
@@ -18,7 +18,8 @@ class HashTable:
 	
 	def put(self, word):
 		position = self.position(word)
-		hashID = self.hash(word)
+		print(position)
+		hashID = self.hashID(word)
 		if self.data[position] == None:
 			self.data[position] = [word]
 			self.hash[position] = [hashID]
@@ -28,17 +29,20 @@ class HashTable:
 
 	def get(self, find):
 		position = self.position(find)
-		if find in self.data[position]:
-			return True
-		else:
+		# simpler way to if-condition?
+		if self.data[position] == None or find not in self.data[position]:
 			return False
+		else:
+			return True
 
 Test = HashTable(11)
 Test.put('Bob')
+print(Test.data)
+print(Test.get('Nancy'))
 
-# check permutation
+# check permbutation
 def check_permutation(string1, string2):
-	''' Function checks whether strings are permutations of each other
+	''' Function checks whether strings are permutations of one another
 	'''
 	if len(string1) != len(string2):
 		return False
