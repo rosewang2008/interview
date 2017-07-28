@@ -35,21 +35,37 @@ class HashTable:
 		else:
 			return True
 
-Test = HashTable(11)
-Test.put('Bob')
-print(Test.data)
-print(Test.get('Nancy'))
 
-# check permbutation
-def check_permutation(string1, string2):
+#### check permbutation ####
+
+# First try
+def check_permutation1(string1, string2):
 	''' Function checks whether strings are permutations of one another
 	'''
+	# Work with definition
+	# permutation: same letters, in a different order
+	P = HashTable(5)
 	if len(string1) != len(string2):
 		return False
-	P = HashTable(5)
-	for letter in string1:
-		P.put(letter)
-		print(H.data)
-	# permutation: same letters, in a different order
+	else:
+		for letter1 in string1:
+			P.put(letter1)
+		for letter2 in string2:
+			print(P.get(letter2))
+	# problem: does not check for permutation! only if it has the same letters, but not the same # letter appearances
 
+def check_permutation2(string1, string2):
+	#check length
+	if len(string1) != len(string2):
+		return False
+	# otherwise: convert string into list of letters
+	# sort in alphabetic order
 
+	list1 = sorted(list(string1))
+	list2 = sorted(list(string2))
+	if list1 == list2:
+		return True
+	else:
+		return False
+
+print(check_permutation2('hi', 'hi'))
