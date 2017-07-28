@@ -1,19 +1,29 @@
-def change(phrase, length):
-	''' Method that changes all single spaces into '%20'
-	Also given: length of string
+def cut(phrase, length):
+	''' Method that cut string with appropriate length
 	'''
 	alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	phrase[::-1]
-	start = 0
-	next(letter for letter in phrase if letter in alphabet)
+	for letter in phrase:
+		if letter in alphabet:
+			start =phrase.index(letter)
+			return phrase[start:start + length]
 
+def replace(phrase):
+	''' Method that replaces all spaces with '%20'
+	'''
 	new_phrase = ''
-	for letter in range(start, len(phrase)):
-		if phrase[letter] in alphabet:
-			new_phrase += new_phrase[letter]
-		elif phrase[letter] == ' ':
-			new_phrase += '02%'
+	for letter in phrase:
+		if letter == ' ':
+			new_phrase += '%20'
+		else: 
+			new_phrase += letter
+	return new_phrase
 
-	return new_phrase[::-1]
+def URLify(phrase, length):
+	''' Method that cuts phrase with appropriate length and changes all single spaces into '%20'
+	Also given: length of string
+	'''
+	new_phrase = cut(phrase, length)
+	modified_phrase = replace(new_phrase)
+	return modified_phrase
 		 
-print(change('Mr John Smith        ', 10))
+print(URLify('Mr John Smith        ', 13))
