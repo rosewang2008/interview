@@ -1,3 +1,8 @@
+# Entering the real world!
+
+In this repo you'll find me doing some of the practice questions from Cracking the Coding Interview. I thought I'd make the most out of my summer and get some good practice in. It's nice to keep my brain active outside of my internship. Has MIT cracked me?? :o
+
+
 # interview
 
 # study sheet
