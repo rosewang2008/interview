@@ -33,9 +33,12 @@ print(node2.next.cargo)
 
 
 def printList(node):
+	node_list = []
 	while node:
-		print #prints empty line
-		print node.cargo
+		# print #prints empty line
+		# print node.cargo
+		node_list.append(node.cargo)
 		node = node.next #loops in while
-
+	print(node_list)
+	
 printList(node1) #node1 already declared class Node
