@@ -11,6 +11,8 @@ class Node:
 	def __str__(self):
 		return self.cargo
 
+	
+
 node = Node('hello')
 print(node)
 
@@ -23,4 +25,17 @@ node3 = Node(3)
 node1.next = node2
 node2.next = node3
 
+# note syntax
+print(node2.next.cargo)
 
+# assembling multiple objects into a collection
+# first node: reference to entire list
+
+
+def printList(node):
+	while node:
+		print #prints empty line
+		print node.cargo
+		node = node.next #loops in while
+
+printList(node1) #node1 already declared class Node
