@@ -35,10 +35,43 @@ print(node2.next.cargo)
 def printList(node):
 	node_list = []
 	while node:
-		# print #prints empty line
+		# print # prints empty line
 		# print node.cargo
 		node_list.append(node.cargo)
 		node = node.next #loops in while
 	print(node_list)
-	
+
 printList(node1) #node1 already declared class Node
+
+
+def add_node(original_node, next_node):
+	''' Original and next must have already been declared as of Class node.
+	'''
+	original_node.next_node = next_node
+
+def remove_node(node):
+	if node.cargo == None:
+		return
+	first = node
+	second = node.next
+
+	# make first node refer to third node
+	first.next = second.next
+	second.next = None
+	return second
+
+# lists and recursion
+
+# list: fire node -- head, rest--tail
+# (recursive call) print tail backwards
+# print head
+
+def printBackwards(node_head):
+	if node_head.cargo == None: 
+		return
+	head = node_head
+	tail = node_head.next
+	printBackwards(tail)
+	print(head)
+
+printBackwards(node1)
