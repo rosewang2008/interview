@@ -2,6 +2,7 @@
 # no constant time access to particular index within list
 # add and remove items from beginning of list in constant time
 
+
 class Node:
 	# if cargo = None.. then self.cargo=cargo=None? What's the point
 	def __init__(self, cargo = None, next = None):
@@ -9,6 +10,7 @@ class Node:
 		self.next = next
 
 	def __str__(self):
+
 		return self.cargo
 
 	
@@ -20,6 +22,9 @@ print(node)
 node1 = Node(1)
 node2 = Node(2)
 node3 = Node(3)
+
+print(node1.cargo)
+
 
 # linking
 node1.next = node2
@@ -70,12 +75,10 @@ def remove_node(node):
 # print head
 
 def printBackwards(node_head):
-	# to be fixed
-	if node_head == None: 
+	if node_head is None: # is, is not test for object identity
 		return
-	head = node_head
-	tail = node_head.next
-	printBackwards(tail)
-	print(head)
+	else:
+		printBackwards(node_head.next)
+		print node_head.cargo,  # print on same line with trailing comma
 
 printBackwards(node1)
