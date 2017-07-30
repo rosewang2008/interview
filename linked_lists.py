@@ -16,14 +16,14 @@ class Node:
 	
 
 node = Node('hello')
-print(node)
+# print(node)
 
 # Not linked yet 
 node1 = Node(1)
 node2 = Node(2)
 node3 = Node(3)
 
-print(node1.cargo)
+# print(node1.cargo)
 
 
 # linking
@@ -31,7 +31,7 @@ node1.next = node2
 node2.next = node3
 
 # note syntax
-print(node2.next.cargo)
+# print(node2.next.cargo)
 
 # assembling multiple objects into a collection
 # first node: reference to entire list
@@ -46,7 +46,7 @@ def printList(node):
 		node = node.next #loops in while
 	print(node_list)
 
-printList(node1) #node1 already declared class Node
+# printList(node1) #node1 already declared class Node
 
 
 def add_node(original_node, next_node):
@@ -54,19 +54,27 @@ def add_node(original_node, next_node):
 	'''
 	original_node.next_node = next_node
 
-def remove_node(node):
+def removeSecond(node):
+	''' Method removes the node that follows input "node"
+	'''
 	# to be fixed for single element list
 	# for empty list
-	# precondiitons
-	if node.cargo == None:
-		return
-	first = node
-	second = node.next
+	# preconditons
 
-	# make first node refer to third node
-	first.next = second.next
-	second.next = None
-	return second
+	#  node1 , X node2 X , node3
+	if node is None:
+		return
+	else: 
+		first = node
+		second = node.next
+
+		first.next = second.next
+		second.next = None
+
+		return second
+
+removeSecond(node1)
+printList(node1)
 
 # lists and recursion
 
@@ -82,3 +90,4 @@ def printBackwards(node_head):
 		print node_head.cargo,  # print on same line with trailing comma
 
 printBackwards(node1)
+
