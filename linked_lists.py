@@ -50,6 +50,9 @@ def add_node(original_node, next_node):
 	original_node.next_node = next_node
 
 def remove_node(node):
+	# to be fixed for single element list
+	# for empty list
+	# precondiitons
 	if node.cargo == None:
 		return
 	first = node
@@ -67,7 +70,8 @@ def remove_node(node):
 # print head
 
 def printBackwards(node_head):
-	if node_head.cargo == None: 
+	# to be fixed
+	if node_head == None: 
 		return
 	head = node_head
 	tail = node_head.next
