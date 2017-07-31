@@ -57,23 +57,37 @@ def add_node(original_node, next_node):
 def removeSecond(node):
 	''' Method removes the node that follows input "node"
 	'''
-	# to be fixed for single element list
-	# for empty list
-	# preconditons
+	try:
+		if node.cargo is None:
+			return 'None type.'
+		else: 
+			first = node
+			second = node.next
 
-	#  node1 , X node2 X , node3
-	if node is None:
-		return
-	else: 
-		first = node
-		second = node.next
+			first.next = second.next
+			second.next = None
+			return second
+	except NameError:
+		return 'Second node not defined'
 
-		first.next = second.next
-		second.next = None
+# node4 = Node()
+# print(removeSecond(node4))
+# printList(node4)
 
-		return second
+def deleteNode(node):
+	# how to make head.next.next point to head.prev?
+	# how to isolate node from linked list?
+	if node.cargo is None:
+		return 'Node is None.'
+	head = node
+	while type(head.next.cargo) is int:
+		head.next = head.next.next
+		return head.cargo
+	head = head.next
+	return node
 
-removeSecond(node1)
+print(deleteNode(node2))
+# print(type(2) is int)
 printList(node1)
 
 # lists and recursion
@@ -89,5 +103,5 @@ def printBackwards(node_head):
 		printBackwards(node_head.next)
 		print node_head.cargo,  # print on same line with trailing comma
 
-printBackwards(node1)
+# printBackwards(node1)
 
