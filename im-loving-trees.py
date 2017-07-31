@@ -24,3 +24,35 @@
 
 	# UNBALANCED
 
+### consider redoing data structures in Java (Java's extensive 'built-in' data structures--useful)
+
+#			10[0]
+#    8 [1]  			20 [2]
+# 4 [3]    9 [4]        15 [5]     30 [6]
+
+# binary search tree
+class Node:
+	def __init__(self, data):
+		self.data = data
+		self.children = []
+
+	def add_child(self, child):
+		self.children.append(child)
+
+	def hasLeftChild(self):
+
+	def hasRightChild(self):
+
+	def isChildOf(self):
+
+	def isLeaf(self): 
+
+	def hasChild(self):
+
+	def hasBothChildren(self): 
+
+	def delete_node(self, node):
+		# check for existence of node
+	def find_mind(self):
+
+	def find_max(self): 
