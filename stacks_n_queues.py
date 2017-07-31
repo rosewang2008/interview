@@ -51,4 +51,8 @@ class QueueTime:
 	def add(item):
 		self.items.append(item)
 	def remove():
-		self.items
+		# to be edited smartly!
+	def peek():
+		return self.items[-1]
+	def isEmpty():
+		return len(self.items) == 0
