@@ -34,3 +34,21 @@ F = Stacktime()
 print(S.peek())
 print(F.isEmpty())
 print(S.isEmpty())
+
+# Queues
+# FIFO: first in, first out
+
+# add(item): add to end 
+# remove(): remove first item
+# peek(): return top of queue
+# isEmpty(): return True iff queue empty
+
+class QueueTime:
+	# implement a front pointer (rather than shifting all items down by one with remove())
+	# implement a count (# of items)
+	def __init__(self):
+		self.items = []
+	def add(item):
+		self.items.append(item)
+	def remove():
+		self.items
