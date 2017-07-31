@@ -105,3 +105,9 @@ def printBackwards(node_head):
 
 # printBackwards(node1)
 
+
+# to be worked on:
+# implementing the Runner Technique (second pointer)
+# linked list problems: typically rely on recursion
+# LinkedList exercises (p. 105)
+
