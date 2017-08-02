@@ -77,15 +77,25 @@ def insert(root, node):
 def in_order_traversal(root):
 	'''Visiting left child, parent, then right child
 	'''
-	if root.left_child is None : # root.left_child == None, end of left branch
-		print('here')
-		print(root)
-		print(root.parent)
-		in_order_traversal(root.right_child)
-	else:
-		print('there')
-		in_order_traversal(root.left_child)
-
+	
+	# if root.hasBothChildren():
+	# 	in_order_traversal(root.left_child)
+	# elif root.hasLeftChild():
+	# 	in_order_traversal(root.left_child)
+	# elif root.hasRightChild():
+	# 	if root.right_child.hasLeftChild():
+	# 		in_order_traversal(root.right_child.left_child)
+	# 	else:
+	# 		in_order_traversal(root.right_child.left_child)
+	# else: # no children, leaf
+	# 	print(root)
+	# 	in_order_traversal(root.parent)
+	# if root.left_child is None: # root.left_child == None, end of left branch
+	# 	print(root)
+	# 	print(root.parent)
+	# 	in_order_traversal(root.right_child)
+	# else:
+	# 	in_order_traversal(root.left_child) # 5
 
 # def find_min(root):
 # 	while root.left_child != None:
@@ -101,6 +111,8 @@ c = Node(15)
 
 insert(a, b)
 insert(a, c)
+# print(b.parent)
+# print(c.parent)
 in_order_traversal(a)
 
 
