@@ -2,7 +2,6 @@
 # no constant time access to particular index within list
 # add and remove items from beginning of list in constant time
 
-
 class Node:
 	# if cargo = None.. then self.cargo=cargo=None? What's the point
 	def __init__(self, cargo = None, next = None):
@@ -11,8 +10,6 @@ class Node:
 
 	def __str__(self):
 		return self.cargo
-
-	
 
 node = Node('hello')
 # print(node)
@@ -35,7 +32,6 @@ node2.next = node3
 
 # assembling multiple objects into a collection
 # first node: reference to entire list
-
 
 def printList(node):
 	node_list = []
@@ -104,7 +100,6 @@ def printBackwards(node_head):
 		print node_head.cargo,  # print on same line with trailing comma
 
 # printBackwards(node1)
-
 
 # to be worked on:
 # implementing the Runner Technique (second pointer)
