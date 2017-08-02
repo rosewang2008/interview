@@ -39,6 +39,9 @@ class Node:
 		self.left_child = None
 		self.right_child = None
 		self.parent = None
+	def __str__(self):
+		return str(self.data)
+		#is there a better way?
 	def hasLeftChild(self):
 		return self.left_child != None
 	def hasRightChild(self):
@@ -52,6 +55,7 @@ class Node:
 	def hasBothChildren(self): 
 		return self.left_child != None and self.right_child != None
 
+# later on: should change to insert INTO a tree, rather than using the root node as a reference
 def insert(root, node):
 	# is there someway to reduce # if conditions
 	if root == None:
@@ -70,11 +74,33 @@ def insert(root, node):
 			else:
 				insert(root.left_child, node)
 
+def in_order_traversal(root):
+	'''Visiting left child, parent, then right child
+	'''
+	if root.left_child is None : # root.left_child == None, end of left branch
+		print('here')
+		print(root)
+		print(root.parent)
+		in_order_traversal(root.right_child)
+	else:
+		print('there')
+		in_order_traversal(root.left_child)
+
+
 # def find_min(root):
 # 	while root.left_child != None:
 # def find_max(self): 
 # 
 # def delete_node(self, node):
-
 	# check for existence of node
+
+
+a = Node(10)
+b = Node(5)
+c = Node(15)
+
+insert(a, b)
+insert(a, c)
+in_order_traversal(a)
+
 

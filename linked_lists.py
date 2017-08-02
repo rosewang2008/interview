@@ -10,7 +10,6 @@ class Node:
 		self.next = next
 
 	def __str__(self):
-
 		return self.cargo
 
 	
@@ -22,6 +21,7 @@ node = Node('hello')
 node1 = Node(1)
 node2 = Node(2)
 node3 = Node(3)
+
 
 # print(node1.cargo)
 
