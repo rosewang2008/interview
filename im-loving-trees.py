@@ -25,9 +25,11 @@
 	# UNBALANCED
 
 ### consider redoing data structures in Java (Java's extensive 'built-in' data structures--useful)
+# later: methods should be under class
+# later: class Tree
+
 
 # binary search tree
-
 # Nodes must be UNIQUE
 class Node:
 	def __init__(self, data):
