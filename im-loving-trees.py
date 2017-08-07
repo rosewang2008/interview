@@ -98,13 +98,22 @@ def find_min(root):
 a = Node(10)
 b = Node(5)
 c = Node(15)
+d = Node(1)
+e = Node(100)
+f = Node(6)
+g = Node(9)
 
 insert(a, b)
 insert(a, c)
+insert(a, d)
+insert(a, e)
+insert(a, f)
+insert(a, g)
+
 
 # print(b.parent)
 # print(c.parent)
-# in_order_traversal(a)
+in_order_traversal(a)
 find_min(a)
 
 
