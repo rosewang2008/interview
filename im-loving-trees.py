@@ -107,8 +107,14 @@ def next_larger(node):
 
 # def find_max(self): 
 # 
-# def delete_node(self, node):
+def delete_node(node, root):
 	# check for existence of node
+	if not node.hasBothChildren():
+		node = None
+	# elif node
+
+
+
 
 def in_order_traversal(root):
 	'''Visiting left child, parent, then right child
