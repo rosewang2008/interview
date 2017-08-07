@@ -26,12 +26,6 @@
 
 ### consider redoing data structures in Java (Java's extensive 'built-in' data structures--useful)
 
-#			10[0]
-
-#    	8 [1]  				20 [2]
-
-# 4 [3]    9 [4]        15 [5]     30 [6]
-
 # binary search tree
 
 # Nodes must be UNIQUE
