@@ -90,15 +90,6 @@ def find(key, root):
 
 # def delete(key): --careful: reordering nodes if applicable
 
-
-def in_order_traversal(root):
-	'''Visiting left child, parent, then right child
-	'''
-	if root is not None: 
-		in_order_traversal(root.left_child) #need to first print entire left side
-		print(root.data) #then root itself
-		in_order_traversal(root.right_child) # afterward: entire right side
-
 def find_min(root):
 	if root.left_child is None:
 		print(root.data)
@@ -123,6 +114,30 @@ def next_larger(node):
 # def delete_node(self, node):
 	# check for existence of node
 
+def in_order_traversal(root):
+	'''Visiting left child, parent, then right child
+	'''
+	if root is not None: 
+		in_order_traversal(root.left_child) #need to first print entire left side
+		print(root.data) #then root itself
+		in_order_traversal(root.right_child) # afterward: entire right side
+
+def pre_order_traversal(root):
+	''' Visiting current node before child nodes
+	'''
+	if root is not None:
+		print(root.data)
+		pre_order_traversal(root.left_child)
+		pre_order_traversal(root.right_child)
+
+def post_order_traversal(root):
+	''' Visiting child nodes, then current node
+	'''
+	if root is not None:
+		post_order_traversal(root.left_child)
+		post_order_traversal(root.right_child)
+		print(root)
+
 a = Node(10)
 b = Node(5)
 c = Node(15)
@@ -141,11 +156,15 @@ insert(a, g)
 # find(0, a)
 
 # del_min(a)
-print(next_larger(a))
+# print(next_larger(a))
 
 # print(b.parent)
 # print(c.parent)
-# in_order_traversal(a)
+in_order_traversal(a)
+print
+pre_order_traversal(a)
+print
+post_order_traversal(a)
 # find_min(a)
 
 
