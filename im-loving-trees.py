@@ -88,6 +88,9 @@ def find(key, root):
 	elif root.data == key:
 		print('key')
 
+# def delete(key): --careful: reordering nodes if applicable
+
+
 def in_order_traversal(root):
 	'''Visiting left child, parent, then right child
 	'''
@@ -107,14 +110,18 @@ def del_min(root):
 		print(root.data)
 		root = None
 	else: 
-		del_min()
+		del_min(root.left_child)
 
+def next_larger(node):
+	if node.right_child == None:
+		return 'None'
+	else:
+		return node.right_child
 
 # def find_max(self): 
 # 
 # def delete_node(self, node):
 	# check for existence of node
-
 
 a = Node(10)
 b = Node(5)
@@ -131,7 +138,10 @@ insert(a, e)
 insert(a, f)
 insert(a, g)
 
-find(0, a)
+# find(0, a)
+
+# del_min(a)
+print(next_larger(a))
 
 # print(b.parent)
 # print(c.parent)
