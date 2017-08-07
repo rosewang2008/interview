@@ -77,15 +77,18 @@ def insert(root, node):
 def in_order_traversal(root):
 	'''Visiting left child, parent, then right child
 	'''
-	
 	if root is not None: 
-		in_order_traversal(root.left_child)
+		in_order_traversal(root.left_child) #need to first print entire left side
+		print(root.data) #then root itself
+		in_order_traversal(root.right_child) # afterward: entire right side
+
+
+def find_min(root):
+	if root.left_child is None:
 		print(root.data)
-		in_order_traversal(root.right_child)
+	else:
+		find_min(root.left_child)
 
-
-# def find_min(root):
-# 	while root.left_child != None:
 # def find_max(self): 
 # 
 # def delete_node(self, node):
@@ -101,6 +104,7 @@ insert(a, c)
 
 # print(b.parent)
 # print(c.parent)
-in_order_traversal(a)
+# in_order_traversal(a)
+find_min(a)
 
 
