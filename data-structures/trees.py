@@ -22,36 +22,40 @@ class Node:
 		return self.left_child != None and self.right_child != None
 
 class Tree(Node):
+	def __init__(self, root):
+		self.root = Node(root)
+		self.root = 
+
 	def insert(self, node):
-		if root == None:
-		root = node
-		else: 
-			if node.data > root.data:
-				if root.right_child == None:
-					root.right_child = node
-					node.parent = root
-				else:
-					insert(root.right_child, node)
-			else: # node.data <= root.data
-				if root.left_child == None:
-					root.left_child = node
-					node.parent = root
-				else:
-					insert(root.left_child, node)
+		if node.data > self.root.data:
+			if root.right_child == None:
+				root.right_child = node
+				node.parent = root
+			else:
+				insert(root.right_child, node)
+		else: # node.data <= root.data
+			if root.left_child == None:
+				root.left_child = node
+				node.parent = root
+			else:
+				insert(root.left_child, node)
+
+
+
+
+
 
 ###### MUST EDIT! #######
-
 	def find(self, node):
-	''' Finds node containing key k, if it exists
-	'''
-	if root == None:
-		print 'Does not exist'
-	elif root.data > key:
-		find(key, root.left_child)
-	elif root.data < key:
-		find(key, root.right_child)
-	elif root.data == key:
-		print('key')
+		''' Finds node containing key k, if it exists'''
+		if root == None:
+			print 'Does not exist'
+		elif root.data > key:
+			find(key, root.left_child)
+		elif root.data < key:
+			find(key, root.right_child)
+		elif root.data == key:
+			print('key')
 
 # def delete(key): --careful: reordering nodes if applicable
 
@@ -109,3 +113,6 @@ class Tree(Node):
 			post_order_traversal(root.left_child)
 			post_order_traversal(root.right_child)
 			print(root)
+
+T = Tree(5)
+T.insert()
