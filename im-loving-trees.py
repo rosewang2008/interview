@@ -33,6 +33,8 @@
 # 4 [3]    9 [4]        15 [5]     30 [6]
 
 # binary search tree
+
+# Nodes must be UNIQUE
 class Node:
 	def __init__(self, data):
 		self.data = data
@@ -74,6 +76,18 @@ def insert(root, node):
 			else:
 				insert(root.left_child, node)
 
+def find(key, root):
+	''' Finds node containing key k, if it exists
+	'''
+	if root == None:
+		print 'Does not exist'
+	elif root.data > key:
+		find(key, root.left_child)
+	elif root.data < key:
+		find(key, root.right_child)
+	elif root.data == key:
+		print('key')
+
 def in_order_traversal(root):
 	'''Visiting left child, parent, then right child
 	'''
@@ -82,12 +96,19 @@ def in_order_traversal(root):
 		print(root.data) #then root itself
 		in_order_traversal(root.right_child) # afterward: entire right side
 
-
 def find_min(root):
 	if root.left_child is None:
 		print(root.data)
 	else:
 		find_min(root.left_child)
+
+def del_min(root):
+	if root.left_child is None:
+		print(root.data)
+		root = None
+	else: 
+		del_min()
+
 
 # def find_max(self): 
 # 
@@ -110,10 +131,11 @@ insert(a, e)
 insert(a, f)
 insert(a, g)
 
+find(0, a)
 
 # print(b.parent)
 # print(c.parent)
-in_order_traversal(a)
-find_min(a)
+# in_order_traversal(a)
+# find_min(a)
 
 
