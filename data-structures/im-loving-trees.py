@@ -25,17 +25,16 @@
 	# UNBALANCED
 
 ### consider redoing data structures in Java (Java's extensive 'built-in' data structures--useful)
-# later: methods should be under class
-# later: class Tree
-
 
 # binary search tree
 # Nodes must be UNIQUE
+# max # nodes per level 2^(l-1)  l = level (1-indexed)
+# max # nodes for tree: 2^h - 1 (h = tree height)
 class Node:
 	def __init__(self, data):
 		self.data = data
-		self.left_child = None
-		self.right_child = None
+		self.left_child = None # pointer to left child
+		self.right_child = None # pointer to right child
 		self.parent = None
 	def __str__(self):
 		return str(self.data)
@@ -84,8 +83,6 @@ def find(key, root):
 	elif root.data == key:
 		print('key')
 
-# def delete(key): --careful: reordering nodes if applicable
-
 def find_min(root):
 	if root.left_child is None:
 		print(root.data)
@@ -125,6 +122,7 @@ def delete_node(node):
 		return
 		#somehow reorder subsequent nodes
 
+### Depth First Traversal ###
 def in_order_traversal(root):
 	'''Visiting left child, parent, then right child
 	'''
@@ -149,6 +147,8 @@ def post_order_traversal(root):
 		post_order_traversal(root.right_child)
 		print(root)
 
+### Breadth First Traversal: Per level ###
+
 a = Node(10)
 b = Node(5)
 c = Node(15)
@@ -156,7 +156,6 @@ d = Node(1)
 e = Node(100)
 f = Node(6)
 g = Node(9)
-
 insert(a, b)
 insert(a, c)
 insert(a, d)

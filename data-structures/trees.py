@@ -38,7 +38,6 @@ class Tree(Node):
 				self.insert(startNode.right_child, insertNode)
 		else: # node.data <= root.data
 			if startNode.left_child == None:
-				print('here')
 				startNode.left_child = insertNode
 				insertNode.parent = startNode
 			else:
@@ -58,15 +57,15 @@ T = Tree(a)
 b = Node(5)
 c = Node(15)
 d = Node(1)
-# e = Node(100)
-# f = Node(6)
-# g = Node(9)
-# T.insert(a,b)
-# T.insert(a,c)
+e = Node(100)
+f = Node(6)
+g = Node(9)
+T.insert(a,b)
+T.insert(a,c)
 T.insert(a,d)
-# T.insert(a,e)
-# T.insert(a,f)
-# T.insert(a,g)
+T.insert(a,e)
+T.insert(a,f)
+T.insert(a,g)
 print(d.parent)
 
 # T.in_order_traversal(a)
