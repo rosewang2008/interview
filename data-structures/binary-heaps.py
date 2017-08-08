@@ -35,6 +35,7 @@ class MinHeap:
 
 	def trickle_down(self):
 		counter = 0
+		#indexing a bit off!
 		while (2*counter+2) in range(self.size()):
 			if self.keys[2*counter + 1] > self.keys[2*counter + 2]:
 				print(H.keys)
@@ -59,7 +60,7 @@ H.insert(10)
 H.insert(30)
 H.insert(7)
 H.insert(37)
-# print(H.keys)
+print(H.keys)
 # H.del_min()
 # print(H.keys)
 
@@ -80,8 +81,8 @@ class MaxHeap:
 		self.keys.append(element)
 		self.order()
 	def order(self):
-		# indexing: a bit off
 		counter = self.size()
+		#indexing a bit off!
 		while counter//2 > 0:
 			if self.keys[counter-1] > self.keys[(counter-1)//2]:
 				old = self.keys[(counter-1)//2]
