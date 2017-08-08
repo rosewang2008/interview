@@ -22,9 +22,9 @@ class MinHeap:
 	def swap(self):
 		counter = self.size() 
 		while counter//2 > 0:
-			if self.keys[counter-1] < self.keys[(counter-1)//2]:
-				old = self.keys[(counter-1)//2]
-				self.keys[(counter-1)//2] = self.keys[counter-1]
+			if self.keys[counter-1] < self.keys[(counter//2)-1]:
+				old = self.keys[(counter//2)-1]
+				self.keys[(counter//2)-1] = self.keys[counter-1]
 				self.keys[counter-1] = old
 			counter = counter // 2
 
@@ -35,16 +35,13 @@ class MinHeap:
 
 	def trickle_down(self):
 		counter = 0
-		#indexing a bit off!
 		while (2*counter+2) in range(self.size()):
 			if self.keys[2*counter + 1] > self.keys[2*counter + 2]:
-				print(H.keys)
 				byebye = self.keys[counter]
 				self.keys[counter] = self.keys[2*counter+2]
 				self.keys[2*counter+2] = byebye
 				counter = 2 * counter + 2
 			elif self.keys[2*counter + 1] < self.keys[2*counter + 2]:
-				print(H.keys)
 				byebye = self.keys[counter]
 				self.keys[counter] = self.keys[2*counter+1]
 				self.keys[2*counter+1] = byebye
@@ -60,7 +57,7 @@ H.insert(10)
 H.insert(30)
 H.insert(7)
 H.insert(37)
-print(H.keys)
+# print(H.keys)
 # H.del_min()
 # print(H.keys)
 
@@ -79,22 +76,26 @@ class MaxHeap:
 		return len(self.keys)
 	def insert(self, element):
 		self.keys.append(element)
+		print(M.keys)
 		self.order()
+
 	def order(self):
 		counter = self.size()
-		#indexing a bit off!
 		while counter//2 > 0:
-			if self.keys[counter-1] > self.keys[(counter-1)//2]:
-				old = self.keys[(counter-1)//2]
-				self.keys[(counter-1)//2] = self.keys[counter-1]
+			if self.keys[counter-1] > self.keys[(counter//2)-1]:
+				old = self.keys[(counter//2)-1]
+				self.keys[(counter//2)-1] = self.keys[counter-1]
 				self.keys[counter-1] = old
 			counter = counter//2
 
 M = MaxHeap()
 M.insert(5)
-M.insert(1)
+M.insert(10)
 M.insert(11)
 M.insert(8)
-M.insert(3)
+M.insert(30)
+M.insert(35)
+M.insert(38)
+M.insert(39)
 print(M.keys)
 
