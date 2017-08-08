@@ -7,9 +7,7 @@
 	# key operations:
 		# insert
 		# extract min
-
-# 0 -> 1,2 				2^(n+1) - 1, 2^(n+1)
-# 1 -> 3,4				
+			
 class Heap:
 	def __init__(self):
 		self.keys = []
@@ -40,24 +38,36 @@ class Heap:
 		counter = 0
 		while (2*counter+2) in range(self.size()):
 			if self.keys[2*counter + 1] > self.keys[2*counter + 2]:
+				print(H.keys)
 				byebye = self.keys[counter]
 				self.keys[counter] = self.keys[2*counter+2]
 				self.keys[2*counter+2] = byebye
 				counter = 2 * counter + 2
 			elif self.keys[2*counter + 1] < self.keys[2*counter + 2]:
+				print(H.keys)
 				byebye = self.keys[counter]
 				self.keys[counter] = self.keys[2*counter+1]
 				self.keys[2*counter+1] = byebye
 				counter = 2 * counter + 1
 		
-
 H = Heap()
 H.insert(5)
 H.insert(1)
 H.insert(11)
 H.insert(8)
 H.insert(3)
+H.insert(10)
+H.insert(30)
+H.insert(7)
+H.insert(37)
 print(H.keys)
-print(H.size())
 H.del_min()
 print(H.keys)
+
+
+# MAX-HEAP:
+	# each node bigger than it children
+	# root = mmax element
+	# key operations:
+		# insert
+		# extract max
