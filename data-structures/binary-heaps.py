@@ -34,12 +34,10 @@ class Heap:
 	def del_min(self):
 		self.keys[0] = self.keys[self.size()-1]
 		self.keys.pop()
-		print(H.keys)
 		self.trickle_down()
 
 	def trickle_down(self):
 		counter = 0
-		#index problem
 		while (2*counter+2) in range(self.size()):
 			if self.keys[2*counter + 1] > self.keys[2*counter + 2]:
 				byebye = self.keys[counter]
