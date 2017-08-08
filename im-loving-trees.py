@@ -84,8 +84,6 @@ def find(key, root):
 	elif root.data == key:
 		print('key')
 
-# def delete(key): --careful: reordering nodes if applicable
-
 def find_min(root):
 	if root.left_child is None:
 		print(root.data)
@@ -105,8 +103,6 @@ def next_larger(node):
 	else:
 		return node.right_child
 
-# def find_max(self): 
-# 
 def delete_node(node, root):
 	# check for existence of node
 	if not node.hasBothChildren():
