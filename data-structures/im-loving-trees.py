@@ -165,10 +165,8 @@ insert(a, f)
 insert(a, g)
 
 # find(0, a)
-
 # del_min(a)
 # print(next_larger(a))
-
 # print(b.parent)
 # print(c.parent)
 in_order_traversal(a)
