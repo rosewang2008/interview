@@ -21,7 +21,6 @@ class MinHeap:
 
 	def swap(self):
 		counter = self.size() 
-		# careful of indices
 		while counter//2 > 0:
 			if self.keys[counter-1] < self.keys[(counter-1)//2]:
 				old = self.keys[(counter-1)//2]
@@ -60,9 +59,9 @@ H.insert(10)
 H.insert(30)
 H.insert(7)
 H.insert(37)
-print(H.keys)
-H.del_min()
-print(H.keys)
+# print(H.keys)
+# H.del_min()
+# print(H.keys)
 
 
 # MAX-HEAP:
@@ -81,7 +80,20 @@ class MaxHeap:
 		self.keys.append(element)
 		self.order()
 	def order(self):
-		
+		# indexing: a bit off
+		counter = self.size()
+		while counter//2 > 0:
+			if self.keys[counter-1] > self.keys[(counter-1)//2]:
+				old = self.keys[(counter-1)//2]
+				self.keys[(counter-1)//2] = self.keys[counter-1]
+				self.keys[counter-1] = old
+			counter = counter//2
 
 M = MaxHeap()
+M.insert(5)
+M.insert(1)
+M.insert(11)
+M.insert(8)
+M.insert(3)
+print(M.keys)
 
