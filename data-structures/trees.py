@@ -1,4 +1,5 @@
 # extended version of 'im-loving-tree.py' with Tree Class
+# to be worked on
 class Node:
 	def __init__(self, data):
 		self.data = data
@@ -27,44 +28,46 @@ class Tree(Node):
 
 	def insert(self, startNode, insertNode):
 		# omitted self.root == None check, since Tree initialization w/ root
-		if insertNode > self.:
-			if self.root.right_child == None:
-				self.root.right_child = node
-				node.parent = self.root
+		if insertNode > startNode.data:
+			if startNode.right_child == None:
+				startNode.right_child = insertNode
+				insertNode.parent = startNode
 			else:
-				self.insert(self.root.right_child, node)
+				self.insert(startNode.right_child, insertNode)
 		else: # node.data <= root.data
-			if self.root.left_child == None:
-				self.root.left_child = node
-				node.parent = self.root
+			if startNode.left_child == None:
+				print('here')
+				startNode.left_child = insertNode
+				insertNode.parent = startNode
 			else:
-				self.insert(self.root.left_child, node)
+				self.insert(startNode.left_child, insertNode)
 
-	def in_order_traversal(self):
+	def in_order_traversal(self, root):
 		'''Visiting left child, parent, then right child
 		'''
-		if self.root is not None: 
-			self.in_order_traversal(self.root.left_child) #need to first print entire left side
-			print(self.root) #then root itself
-			self.in_order_traversal(self.root.right_child) # afterward: entire right side
+		#to be corrected
+		if root is not None: 
+			self.in_order_traversal(root.left_child) #need to first print entire left side
+			print(root) #then root itself
+			self.in_order_traversal(root.right_child) # afterward: entire right side
 
-
-
-
-T = Tree(10)
+a = Node(10)
+T = Tree(a)
 b = Node(5)
 c = Node(15)
 d = Node(1)
-e = Node(100)
-f = Node(6)
-g = Node(9)
-T.insert(b)
-T.insert(c)
-T.insert(d)
-T.insert(e)
-T.insert(f)
-T.insert(g)
-T.in_order_traversal()
+# e = Node(100)
+# f = Node(6)
+# g = Node(9)
+# T.insert(a,b)
+# T.insert(a,c)
+T.insert(a,d)
+# T.insert(a,e)
+# T.insert(a,f)
+# T.insert(a,g)
+print(d.parent)
+
+# T.in_order_traversal(a)
 
 
 
