@@ -8,7 +8,7 @@
 		# insert
 		# extract min
 			
-class Heap:
+class MinHeap:
 	def __init__(self):
 		self.keys = []
 
@@ -50,7 +50,7 @@ class Heap:
 				self.keys[2*counter+1] = byebye
 				counter = 2 * counter + 1
 		
-H = Heap()
+H = MinHeap()
 H.insert(5)
 H.insert(1)
 H.insert(11)
@@ -71,3 +71,17 @@ print(H.keys)
 	# key operations:
 		# insert
 		# extract max
+
+class MaxHeap:
+	def __init__(self):
+		self.keys = []
+	def size(self):
+		return len(self.keys)
+	def insert(self, element):
+		self.keys.append(element)
+		self.order()
+	def order(self):
+		
+
+M = MaxHeap()
+

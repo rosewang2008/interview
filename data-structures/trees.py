@@ -22,6 +22,8 @@ class Node:
 	def hasBothChildren(self): 
 		return self.left_child != None and self.right_child != None
 
+
+#review inheritance!
 class Tree(Node):
 	def __init__(self, data):
 		self.root = Node(data)
