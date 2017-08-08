@@ -92,12 +92,6 @@ def find_min(root):
 	else:
 		find_min(root.left_child)
 
-def find_max(root):
-	if root.right_child is None:
-		print(root.data)
-	else:
-		find_max(root.right_child)
-
 def del_min(root):
 	if root.left_child is None:
 		print(root.data)
@@ -111,19 +105,13 @@ def next_larger(node):
 	else:
 		return node.right_child
 
-def delete_node(node):
+# def find_max(self): 
+# 
+def delete_node(node, root):
 	# check for existence of node
 	if not node.hasBothChildren():
 		node = None
-	elif node.hasLeftChild():
-		node.left_child.parent = node.parent
-		insert(node.parent, node.left_child)
-	elif node.hasRightChild():
-		node.right_child.parent = node.parent
-		insert(node.parent, node.right_child)
-	elif node.hasBothChildren():
-		return
-		#somehow reorder subsequent nodes
+	# elif node
 
 def in_order_traversal(root):
 	'''Visiting left child, parent, then right child
@@ -172,10 +160,10 @@ insert(a, g)
 # print(b.parent)
 # print(c.parent)
 in_order_traversal(a)
-print
-pre_order_traversal(a)
-print
-post_order_traversal(a)
+# print
+# pre_order_traversal(a)
+# print
+# post_order_traversal(a)
 # find_min(a)
 
 
