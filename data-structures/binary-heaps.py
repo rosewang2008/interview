@@ -11,14 +11,11 @@
 class MinHeap:
 	def __init__(self):
 		self.keys = []
-
 	def insert(self, key):
 		self.keys.append(key)
 		self.swap()
-
 	def size(self):
 		return len(self.keys)
-
 	def swap(self):
 		counter = self.size() 
 		while counter//2 > 0:
@@ -27,12 +24,10 @@ class MinHeap:
 				self.keys[(counter//2)-1] = self.keys[counter-1]
 				self.keys[counter-1] = old
 			counter = counter // 2
-
 	def del_min(self):
 		self.keys[0] = self.keys[self.size()-1]
 		self.keys.pop()
 		self.trickle_down()
-
 	def trickle_down(self):
 		counter = 0
 		while (2*counter+2) in range(self.size()):
@@ -78,16 +73,32 @@ class MaxHeap:
 		self.keys.append(element)
 		print(M.keys)
 		self.order()
-
 	def order(self):
 		counter = self.size()
 		while counter//2 > 0:
 			if self.keys[counter-1] > self.keys[(counter//2)-1]:
-				old = self.keys[(counter//2)-1]
+				adios = self.keys[(counter//2)-1]
 				self.keys[(counter//2)-1] = self.keys[counter-1]
-				self.keys[counter-1] = old
+				self.keys[counter-1] = adios
 			counter = counter//2
+	def del_max(self):
+		self.keys[0] = self.keys[self.size()-1]
+		self.keys.pop()
+		self.trinkle_down()
 
+	def trinkle_down(self):
+		counter = self.size()
+		while (2*counter+2) in range(self.size()):
+			if self.keys[2*counter + 1] > self.keys[2*counter+2]:
+				swappo = self.keys[2*counter +1]
+				self.keys[2*counter + 1] = self.keys[counter]
+				self.keys[counter] = swappo
+				counter = 2*counter + 1
+			elif self.keys[2*counter + 1] < self.keys[2*counter+2]:
+				swappo = self.keys[2*counter+2]
+				self.keys[2*counter+2] = self.keys[counter]
+				self.keys[counter] = swappo
+				counter = 2*counter+2
 M = MaxHeap()
 M.insert(5)
 M.insert(10)
@@ -98,4 +109,8 @@ M.insert(35)
 M.insert(38)
 M.insert(39)
 print(M.keys)
+
+M.del_max()
+print(M.keys)
+
 
