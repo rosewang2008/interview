@@ -47,9 +47,9 @@ class QueueTime:
 		self.items = []
 		self.count = len(self.items)
 		#self.front = self.items[0]
-	def insert(self, item):
+	def enqueue(self, item):
 		self.items.append(item)
-	def remove(self):
+	def dequeue(self):
 		self.count -= 1
 		self.items = self.items[1:]
 	def peek(self):
@@ -58,13 +58,13 @@ class QueueTime:
 		return len(self.items) == 0
 
 Q = QueueTime()
-Q.insert(1)
-Q.insert(2)
-Q.insert(3)
-Q.insert(4)
+Q.enqueue(1)
+Q.enqueue(2)
+Q.enqueue(3)
+Q.enqueue(4)
 print(Q.items)
 print(len(Q.items))
-print(Q.remove())
-print(Q.remove())
+print(Q.dequeue())
+print(Q.dequeue())
 print(Q.peek())
 print(Q.items)
