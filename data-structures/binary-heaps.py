@@ -16,24 +16,28 @@ class Heap:
 
 	def insert(self, key):
 		self.keys.append(key)
-		# self.swap(b)
+		self.swap()
 
 	def size(self):
 		return len(self.keys)
 
-	def swap(self, element):
-		counter = self.size()
-		while counter >= 0:
-			
-		
-
+	def swap(self):
+		counter = self.size() 
+		while counter//2 > 0:
+			if self.keys[counter-1] < self.keys[(counter-1)//2]:
+				old = self.keys[(counter-1)//2]
+				self.keys[(counter-1)//2] = self.keys[counter-1]
+				self.keys[counter-1] = old
+			counter = counter // 2
 
 
 H = Heap()
 
-H.insert(1)
-H.insert(11)
 H.insert(5)
+H.insert(1)
+# print(H.size())
+H.insert(11)
+
 H.insert(8)
 H.insert(3)
 
