@@ -30,16 +30,11 @@ class Heap:
 				self.keys[counter-1] = old
 			counter = counter // 2
 
-
 H = Heap()
-
 H.insert(5)
 H.insert(1)
-# print(H.size())
 H.insert(11)
-
 H.insert(8)
 H.insert(3)
-
 print(H.keys)
 print(H.size())
