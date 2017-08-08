@@ -1,4 +1,5 @@
-# from. http://interactivepython.org/runestone/static/pythonds/SortSearch/Hashing.html#fig-hashtable2
+# from http://interactivepython.org/runestone/static/pythonds/SortSearch/Hashing.html#fig-hashtable2
+# find my own implementation under arrays.py
 class HashTable:
     def __init__(self):
         self.size = 11
@@ -6,7 +7,6 @@ class HashTable:
         self.data = [None] * self.size
     def put(self,key,data):
   		hashvalue = self.hashfunction(key,len(self.slots))
-
 		if self.slots[hashvalue] == None:
 			self.slots[hashvalue] = key
 			self.data[hashvalue] = data
