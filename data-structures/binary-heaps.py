@@ -23,16 +23,18 @@ class Heap:
 
 	def swap(self):
 		counter = self.size() 
+		# careful of indices
 		while counter//2 > 0:
 			if self.keys[counter-1] < self.keys[(counter-1)//2]:
 				old = self.keys[(counter-1)//2]
 				self.keys[(counter-1)//2] = self.keys[counter-1]
 				self.keys[counter-1] = old
 			counter = counter // 2
+			
 	def del_min(self):
 		self.keys[0] = self.keys[self.size()-1]
 		self.trickle_down()
-		
+
 	def trickle_down(self):
 
 H = Heap()
