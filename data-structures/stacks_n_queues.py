@@ -9,7 +9,7 @@
 class Stacktime:
 	def __init__(self):
 		self.items = []
-	def remove(self):
+	def pop(self):
 		self.items.pop()
 	def push(self, item):
 		self.items.append(item)
