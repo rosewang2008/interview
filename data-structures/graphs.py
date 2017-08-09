@@ -13,23 +13,48 @@
 class Node:
 	''' Using dictionaries for implementation
 	'''
-	def __init__(self, id, weight):
-		self.id = name
+	def __init__(self, ID, weight):
+		self.ID = ID
 		self.weight = weight
-		self.children = {}
+		self.connections = {}
 	def connect(self, other):
-		self.children[other.id] = other.weight
-	def
+		self.connections[other.ID] = other.weight
+		return other.ID
+	def getConnections(self):
+		return self.connections.keys()
 
-class Graph:
+class Graph(Node):
 	def __init__(self):
 		self.nodes = []
 		self.size = len(self.nodes)
+		self.connections = {}
 
-	def insert(self, vertex):
+	def add(self, Node):
+		for conn in Node.connections.keys():
+			self.connections[Node.ID] = conn
+
+	def insert(self, ID, weight):
+		Node.__init__(self, ID, weight)
+		for conn in Node.connections.keys():
+			self.connections[Node.ID] = conn
+
+
+
 		
-
-
+a = Node('a', 5)
+b = Node('b', 4)
+c = Node('c', 4)
+a.connect(b)
+a.connect(c)
+print(a.getConnections())
+print(a.connections)
+G = Graph()
+G.add(a)
+print(G.connections)
 
 
 # Adjacency Matrix
+# N x N boolean matrix, matrix[i][j] true = edge between vertex i and j
+# UNDIRECTED: symmetric matrix
+
+
