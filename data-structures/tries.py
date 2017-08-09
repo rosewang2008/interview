@@ -10,11 +10,25 @@ import string
 class TrieNode:
 	def __init__(self):
 		self.children = [None] * 26
+		self.isLeaf = False
 
-	def insert(self, char):
-		self.
-
-
-class TerminatingTreeNode(TrieNode):
+class Trie:
 	def __init__(self):
+		self.root = self.getNode()
+	def getNode(self):
+		return TrieNode()
+	def insert(self, word):
+		# check if word exists in Trie
+		# Otherwise insert
+		start = self.root
+		for level in range(len(word)):
+			index = string.lowercase.index(word[level])
+			if not start.children[index]: # not present
+				start.children[index] = self.getNode()
+			start = start.children[index]
+		start.isLeaf = True
+	def search(self, word):
+		
+
+
 
