@@ -10,6 +10,9 @@
 # node: stores adjacent vertices
 
 # ID: string, weight: int
+
+
+# see https://www.python.org/doc/essays/graphs/ as a reference
 class Node:
 	''' Using dictionaries for implementation
 	'''
