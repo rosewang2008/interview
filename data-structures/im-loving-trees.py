@@ -75,7 +75,7 @@ def find(key, root):
 	''' Finds node containing key k, if it exists
 	'''
 	if root == None:
-		print 'Does not exist'
+		raise NameError
 	elif root.data > key:
 		find(key, root.left_child)
 	elif root.data < key:
@@ -113,13 +113,23 @@ def delete_node(node):
 	if not node.hasBothChildren():
 		node = None
 	elif node.hasLeftChild():
+		node.parent.left_child = node.left_child
 		node.left_child.parent = node.parent
 		insert(node.parent, node.left_child)
 	elif node.hasRightChild():
+		node.parent.right_child = node.right_child
 		node.right_child.parent = node.parent
 		insert(node.parent, node.right_child)
 	elif node.hasBothChildren():
-		return
+		if node.right_child.left_child is not None: # inorder successor
+			save = node.right_child.left_child
+			node = save
+			delete_node(save)
+		else: #take larger successor
+			node = node.right_child
+
+			
+
 		#somehow reorder subsequent nodes
 
 ### Depth First Traversal ###
@@ -163,7 +173,7 @@ insert(a, e)
 insert(a, f)
 insert(a, g)
 
-# find(0, a)
+find(0, a)
 # del_min(a)
 # print(next_larger(a))
 # print(b.parent)
