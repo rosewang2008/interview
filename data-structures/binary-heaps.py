@@ -42,16 +42,16 @@ class MinHeap:
 				self.keys[2*counter+1] = byebye
 				counter = 2 * counter + 1
 		
-H = MinHeap()
-H.insert(5)
-H.insert(1)
-H.insert(11)
-H.insert(8)
-H.insert(3)
-H.insert(10)
-H.insert(30)
-H.insert(7)
-H.insert(37)
+# H = MinHeap()
+# H.insert(5)
+# H.insert(1)
+# H.insert(11)
+# H.insert(8)
+# H.insert(3)
+# H.insert(10)
+# H.insert(30)
+# H.insert(7)
+# H.insert(37)
 # print(H.keys)
 # H.del_min()
 # print(H.keys)
@@ -87,7 +87,7 @@ class MaxHeap:
 		self.trinkle_down()
 
 	def trinkle_down(self):
-		counter = self.size()
+		counter = 0
 		while (2*counter+2) in range(self.size()):
 			if self.keys[2*counter + 1] > self.keys[2*counter+2]:
 				swappo = self.keys[2*counter +1]
