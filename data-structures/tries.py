@@ -5,12 +5,10 @@
 	# TerminatingTrieNode: inherits from TrieNode
 
 import string 
-# empty root
-# how to indicate which path to take?
 class TrieNode:
 	def __init__(self):
-		self.children = [None] * 26
-		self.isLeaf = False
+		self.children = [None] * 26 #initializing a spot for each (lowercase) letter
+		self.isLeaf = False # boolean for leaf
 
 class Trie:
 	def __init__(self):
@@ -18,13 +16,10 @@ class Trie:
 	def getNode(self):
 		return TrieNode()
 	def insert(self, word):
-		# check if word exists in Trie
-		# Otherwise insert
 		start = self.root
-		length = len(word)
-		for level in range(length):
+		for level in range(len(word)):
 			index = string.lowercase.index(word[level])
-			if not start.children[index]: # not present
+			if not start.children[index]: # if not None = if not present
 				start.children[index] = self.getNode()
 			start = start.children[index]
 		start.isLeaf = True
