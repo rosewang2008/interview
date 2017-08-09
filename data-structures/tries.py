@@ -21,14 +21,22 @@ class Trie:
 		# check if word exists in Trie
 		# Otherwise insert
 		start = self.root
-		for level in range(len(word)):
+		length = len(word)
+		for level in range(length):
 			index = string.lowercase.index(word[level])
 			if not start.children[index]: # not present
 				start.children[index] = self.getNode()
 			start = start.children[index]
 		start.isLeaf = True
 	def search(self, word):
-		
+		start = self.root
+		for level in range(len(word)):
+			index = string.lowercase.index(word[level])
+			if not start.children[index]:
+				return False
+			start = start.children[index]
+		return True
 
-
-
+T = Trie()
+T.insert('stan')
+print(T.search('stan'))
