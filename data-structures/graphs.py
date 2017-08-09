@@ -13,7 +13,7 @@
 class Node:
 	''' Using dictionaries for implementation
 	'''
-	def __init__(self, ID, weight):
+	def __init__(self, ID,  weight):
 		self.ID = ID
 		self.weight = weight
 		self.connections = {}
@@ -25,32 +25,35 @@ class Node:
 
 class Graph(Node):
 	def __init__(self):
-		self.nodes = []
+		self.nodes = {}
 		self.size = len(self.nodes)
-		self.connections = {}
 
 	def add(self, Node):
+		# Node already initialized
+		# adding Node's connecting vertices to graph
+
 		for conn in Node.connections.keys():
-			self.connections[Node.ID] = conn
+			if Node.ID in self.nodes.keys():
+				self.nodes[Node.ID].append(eval(conn))
+			else: 
+				self.nodes[Node.ID] = eval(conn).ID
 
 	def insert(self, ID, weight):
-		Node.__init__(self, ID, weight)
-		for conn in Node.connections.keys():
-			self.connections[Node.ID] = conn
+		vertex = Node.__init__(self, ID, weight)
+		self.add(vertex)
 
-
-
-		
 a = Node('a', 5)
 b = Node('b', 4)
 c = Node('c', 4)
 a.connect(b)
 a.connect(c)
-print(a.getConnections())
-print(a.connections)
+# print(a.getConnections())
+# print(a.connections)
 G = Graph()
 G.add(a)
-print(G.connections)
+print(G.nodes)
+
+
 
 
 # Adjacency Matrix
