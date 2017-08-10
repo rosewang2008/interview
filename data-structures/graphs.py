@@ -63,22 +63,30 @@ class Vertex:
 	def __init__(self, id):
 		self.id = id
 
+
 class Matrix(Vertex):
 	def __init__(self):
 		self.vertices = []
-		self.size = len(self.vertices)
 		self.matrix = []
 
+	def size(self):
+		return len(self.vertices)
+
 	def add(self, Vertex):
+		self.matrix.append([0]*self.size())
 		self.vertices.append(Vertex.id) # in chronological order (time of insertion)
-		self.matrix.append([0])
 		for vertex in self.matrix:
 			vertex.append(0)
 
+	def connect(self, Vertex, Vertex)
+
 new = Vertex(1)
 new1 = Vertex(2)
+new2 = Vertex(3)
 M = Matrix()
 M.add(new)
 M.add(new1)
+M.add(new2)
+print(M.size())
 print(M.matrix)
 print(M.vertices)
