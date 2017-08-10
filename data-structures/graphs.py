@@ -78,7 +78,14 @@ class Matrix(Vertex):
 		for vertex in self.matrix:
 			vertex.append(0)
 
-	def connect(self, Vertex, Vertex)
+	def connect(self, vertex1, vertex2):
+		v1 = Vertex(vertex1)
+		v2 = Vertex(vertex2)
+		self.add(v1)
+		index1 = self.size() - 1 
+		self.add(v2)
+		index2 = self.size() - 1 
+		self.matrix[index1][index2] = 1
 
 new = Vertex(1)
 new1 = Vertex(2)
@@ -90,3 +97,5 @@ M.add(new2)
 print(M.size())
 print(M.matrix)
 print(M.vertices)
+M.connect(4, 5)
+print(M.matrix)
