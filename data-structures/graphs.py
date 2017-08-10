@@ -59,4 +59,18 @@ print(G.nodes)
 # N x N boolean matrix, matrix[i][j] true = edge between vertex i and j
 # UNDIRECTED: symmetric matrix
 
+class Vertex:
+	def __init__(self, id):
+		self.id = id
 
+class Matrix(Vertex):
+	def __init__(self):
+		self.vertices = []
+		self.size = len(self.vertices)
+		self.matrix = []
+
+	def add(self, Vertex):
+		self.vertices.append(Vertex.id) # in chronological order (time of insertion)
+		self.matrix.append([0] * (self.size-1))
+		for vertex in self.vertices:
+			
