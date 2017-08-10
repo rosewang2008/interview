@@ -17,9 +17,12 @@ class Node:
 		self.ID = ID
 		self.weight = weight
 		self.connections = {}
+		self.visited = false
+
 	def connect(self, other):
 		self.connections[other.ID] = [other.weight]
 		return other.ID
+
 	def getConnections(self):
 		return self.connections.keys()
 
@@ -63,6 +66,7 @@ print(G.nodes)
 class Vertex:
 	def __init__(self, id):
 		self.id = id
+		self.visited = false
 
 class Matrix(Vertex):
 	def __init__(self):
@@ -104,10 +108,22 @@ print(M.matrix)
 # graph search
 # DEPTH	FIRST SEARCH (DFS): exploring each branch, going DEEP!
 	# visiting every node
+	# e.g. pre-order, other tree traversals
+	# should check if node has already been visited
+def search(Node):
+	# initialize some kind of list to keep track of paths 
+	# check if exists
+	# then:
+
+	if Node.visited == true:
+		return
+	else: 
+		Node.visited = true
+		for neighbor in Node.connections.keys():
 
 
-	
 # BREADTH FIRST SEARCH (BFS): exploring each neighbor, going WIDE! 
 	# finding shortest path
+	# not recursive, uses QUEUES! (woo, applying knowledge)
 
 
