@@ -10,9 +10,6 @@
 # node: stores adjacent vertices
 
 # ID: string, weight: int
-
-
-# see https://www.python.org/doc/essays/graphs/ as a reference
 class Node:
 	''' Using dictionaries for implementation
 	'''
@@ -32,9 +29,10 @@ class Graph(Node):
 		self.size = len(self.nodes)
 
 	def add(self, Node):
-		# Node already initialized
-		# adding Node's connecting vertices to graph
-
+		''' Node is already initialized. 
+		add() adds the node into the graph, 
+		along with the node's connecting vertices
+		'''
 		for conn in Node.connections.keys():
 			if Node.ID in self.nodes.keys():
 				self.nodes[Node.ID].append(conn)
@@ -55,8 +53,6 @@ a.connect(c)
 G = Graph()
 G.add(a)
 print(G.nodes)
-
-
 
 
 # Adjacency Matrix
