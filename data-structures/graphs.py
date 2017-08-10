@@ -21,7 +21,7 @@ class Node:
 		self.weight = weight
 		self.connections = {}
 	def connect(self, other):
-		self.connections[other.ID] = other.weight
+		self.connections[other.ID] = [other.weight]
 		return other.ID
 	def getConnections(self):
 		return self.connections.keys()
@@ -37,9 +37,9 @@ class Graph(Node):
 
 		for conn in Node.connections.keys():
 			if Node.ID in self.nodes.keys():
-				self.nodes[Node.ID].append(eval(conn))
+				self.nodes[Node.ID].append(conn)
 			else: 
-				self.nodes[Node.ID] = eval(conn).ID
+				self.nodes[Node.ID] = [conn]
 
 	def insert(self, ID, weight):
 		vertex = Node.__init__(self, ID, weight)
