@@ -71,6 +71,14 @@ class Matrix(Vertex):
 
 	def add(self, Vertex):
 		self.vertices.append(Vertex.id) # in chronological order (time of insertion)
-		self.matrix.append([0] * (self.size-1))
-		for vertex in self.vertices:
-			
+		self.matrix.append([0])
+		for vertex in self.matrix:
+			vertex.append(0)
+
+new = Vertex(1)
+new1 = Vertex(2)
+M = Matrix()
+M.add(new)
+M.add(new1)
+print(M.matrix)
+print(M.vertices)
