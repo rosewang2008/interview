@@ -103,5 +103,8 @@ print(M.matrix)
 
 # graph search
 # DEPTH	FIRST SEARCH (DFS): exploring each branch, going DEEP!
+	# visiting every node
 # BREADTH FIRST SEARCH (BFS): exploring each neighbor, going WIDE! 
+	# finding shortest path
+	
 
