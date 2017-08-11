@@ -17,7 +17,7 @@ class Node:
 		self.ID = ID
 		self.weight = weight
 		self.connections = {}
-		self.visited = false
+		self.visited = False
 
 	def connect(self, other):
 		self.connections[other.ID] = [other.weight]
@@ -66,7 +66,7 @@ print(G.nodes)
 class Vertex:
 	def __init__(self, id):
 		self.id = id
-		self.visited = false
+		self.visited = False
 
 class Matrix(Vertex):
 	def __init__(self):
@@ -120,10 +120,24 @@ def search(Node):
 	else: 
 		Node.visited = true
 		for neighbor in Node.connections.keys():
-
+			search(neighbor)
 
 # BREADTH FIRST SEARCH (BFS): exploring each neighbor, going WIDE! 
 	# finding shortest path
 	# not recursive, uses QUEUES! (woo, applying knowledge)
+
+class Queue:
+	def __init__(self):
+		self.queue = []
+		self.count = 0
+	def size(self):
+		return len(self.queue)
+	def add(self, item):
+		self.queue.append(item)
+	def delFirst(self):
+		self.queue = self.queue[1:]
+
+
+
 
 

@@ -47,7 +47,10 @@ class QueueTime:
 		self.items = []
 		self.count = len(self.items)
 		#self.front = self.items[0]
+	def size(self): 
+		return len(self.items)
 	def enqueue(self, item):
+		self.count += 1
 		self.items.append(item)
 	def dequeue(self):
 		self.count -= 1
