@@ -43,12 +43,14 @@ class Graph(Node):
 		# check if exists
 		# then:
 		if Node.visited == True:
-			return
+			return 'nope'
 		else: 
 			Node.visited = True
 			for neighbor in Node.connections.keys():
-				search(neighbor)
-			return Node.ID
+				self.search(neighbor)
+			return 'yup'
+
+
 a = Node('a', 5)
 b = Node('b', 4)
 c = Node('c', 4)
@@ -58,7 +60,7 @@ a.connect(c)
 # print(a.connections)
 G = Graph()
 G.add(a)
-print(search(a))
+print(G.search(a))
 
 # BREADTH FIRST SEARCH (BFS): exploring each neighbor, going WIDE! 
 	# finding shortest path
