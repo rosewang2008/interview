@@ -6,33 +6,25 @@ class Node:
 		self.weight = weight
 		self.connections = {}
 		self.visited = False
-
 	def connect(self, other):
 		self.connections[other.ID] = [other.weight]
 		return other.ID
-
 	def getConnections(self):
 		return self.connections.keys()
-
 class Graph(Node):
 	def __init__(self):
 		self.nodes = {}
 		self.size = len(self.nodes)
-
 	def add(self, Node):
-		''' Node is already initialized. 
-		add() adds the node into the graph, 
-		along with the node's connecting vertices
-		'''
 		for conn in Node.connections.keys():
 			if Node.ID in self.nodes.keys():
 				self.nodes[Node.ID].append(conn)
 			else: 
 				self.nodes[Node.ID] = [conn]
-
 	def insert(self, ID, weight):
 		vertex = Node.__init__(self, ID, weight)
 		self.add(vertex)
+
 # graph search
 # DEPTH	FIRST SEARCH (DFS): exploring each branch, going DEEP!
 	# visiting every node
@@ -61,6 +53,10 @@ a.connect(c)
 G = Graph()
 G.add(a)
 print(G.search(a))
+
+
+
+
 
 # BREADTH FIRST SEARCH (BFS): exploring each neighbor, going WIDE! 
 	# finding shortest path
