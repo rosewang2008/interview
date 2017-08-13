@@ -114,7 +114,6 @@ def search(Node):
 	# initialize some kind of list to keep track of paths 
 	# check if exists
 	# then:
-
 	if Node.visited == true:
 		return
 	else: 
