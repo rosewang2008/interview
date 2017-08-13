@@ -114,12 +114,15 @@ def search(Node):
 	# initialize some kind of list to keep track of paths 
 	# check if exists
 	# then:
-	if Node.visited == true:
+	if Node.visited == True:
 		return
 	else: 
-		Node.visited = true
+		Node.visited = True
 		for neighbor in Node.connections.keys():
 			search(neighbor)
+		return Node.ID
+
+print(search(a))
 
 # BREADTH FIRST SEARCH (BFS): exploring each neighbor, going WIDE! 
 	# finding shortest path
