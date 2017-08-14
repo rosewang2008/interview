@@ -34,13 +34,14 @@ class Graph(Node):
 		# initialize some kind of list to keep track of paths 
 		# check if exists
 		# then:
-		if Node.visited == True:
-			return 'nope'
-		else: 
-			Node.visited = True
-			for neighbor in Node.connections.keys():
-				self.search(neighbor)
-			return 'yup'
+		if Node.ID in self.nodes.keys():
+			if Node.visited == False:
+				Node.visited = True
+				print(Node.visited)
+				for neighbor in Node.connections.keys():
+					self.search(neighbor)
+			# else:
+			# 	return
 
 
 a = Node('a', 5)
@@ -52,6 +53,7 @@ a.connect(c)
 # print(a.connections)
 G = Graph()
 G.add(a)
+print(G.nodes)
 print(G.search(a))
 
 
