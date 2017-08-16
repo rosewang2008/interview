@@ -25,17 +25,15 @@ class Graph(Node):
 		vertex = Node.__init__(self, ID, weight)
 		self.add(vertex)
 
+# additional resources :http://eddmann.com/posts/depth-first-search-and-breadth-first-search-in-python/
 # graph search
 # DEPTH	FIRST SEARCH (DFS): exploring each branch, going DEEP!
 	# visiting every node
 	# e.g. pre-order, other tree traversals
 	# should check if node has already been visited
 	def search(self, Node):
-		# initialize some kind of list to keep track of paths 
-		# check if exists
-		# then:
 		if Node.ID in self.nodes.keys():
-			if Node.visited == False:
+			if Node.visited == False:	
 				Node.visited = True
 				print(Node.visited)
 				for neighbor in Node.connections.keys():
@@ -45,7 +43,7 @@ class Graph(Node):
 
 
 a = Node('a', 5)
-b = Node('b', 4)
+b = Node('b', 4) 
 c = Node('c', 4)
 a.connect(b)
 a.connect(c)
