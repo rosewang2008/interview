@@ -14,7 +14,8 @@ for arr_i in range(6):
 
 def hourglass(array):
 	# got test case wrong for initializing largest = 0
-	#wondering why...
+	# because hourglass might have negative values! sum might not be < largest = 0 
+	# can initialize largest to -56, since matrix 6x6, largest min val: -9
     total = arr[0][0] + arr[0][1] + arr[0][2] + arr[1][1] + arr[2][0] + arr[2][1] + arr[2][2] 
     
     for row in range(4): 
