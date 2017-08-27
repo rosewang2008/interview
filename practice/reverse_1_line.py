@@ -5,4 +5,4 @@ arr = [int(arr_temp) for arr_temp in input().strip().split(' ')]
 
 arr.reverse()
 for element in arr:
-    print(element, end=' ')
+    print(element, end=' ')x
